@@ -1,0 +1,7 @@
+<h3>User</h3>
+<p>Name: <%= @user.name if @user.name %></p>
+Avatar: <td><%= image_tag(@user.avatar.url(:thumb)) %></td>
+
+<% if @user == current_user %>
+	<p>Email: <%= @user.email if @user.email %></p>
+<%end%>
