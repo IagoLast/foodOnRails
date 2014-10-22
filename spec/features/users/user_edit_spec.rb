@@ -26,17 +26,6 @@ feature 'User edit', :devise do
     expect(page).to have_content(/.*#{txts[0]}.*|.*#{txts[1]}.*/)
   end
 
-  # Scenario: User see his own avatar while editing
-  #   Given I am signed in
-  #   When I go to edit my profile
-  #   Then I see my avatar
-  scenario 'user see his avatar' do
-    user = FactoryGirl.create(:user)
-    login_as(user, :scope => :user)
-    visit edit_user_registration_path(user)
-    expect(page.find('img')['src']).to have_content user.avatar(:thumb)
-  end
-
   # Scenario: User cannot edit another user's profile
   #   Given I am signed in
   #   When I try to edit another user's profile
