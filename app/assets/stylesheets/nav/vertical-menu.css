@@ -1,0 +1,57 @@
+@media only screen and (min-width : 768px) {
+	.navbar-fixed-left {
+		position: fixed;
+		width: 250px;
+		height: 100%;
+		left: 0;
+		border-radius: 0px;
+		overflow: y;
+	}
+
+	.navbar-fixed-left .navbar-header {
+		float: none;
+		padding: 15px;
+	}
+	.navbar-fixed-left .navbar-brand {
+		float:none;
+
+	}
+
+	.navbar-fixed-left .container {
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+
+	.container {
+		width: auto;
+	}
+
+	.navbar-fixed-left .container-fluid {
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+
+	.navbar-fixed-left .navbar-collapse {
+		padding: 0;
+	}
+
+	.navbar-fixed-left ul li {
+		float: none;
+	}
+
+	.navbar-fixed-left .navbar-nav {
+		float: none;
+	}
+
+	.navbar-fixed-left .navbar-right:last-child {
+		margin-right:0;
+	}
+
+	.vertical-menu-wrapper {
+		margin-left:250px;
+	}
+
+}
+
