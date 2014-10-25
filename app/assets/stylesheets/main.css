@@ -1,3 +1,14 @@
 ul {
 	list-style: none;
 }
+
+.btn-danger {
+	background-color: #993333;
+	border-color: #993333;
+
+}
+
+.btn-danger:hover{
+	background-color: #6B2424;
+	border-color: #6B2424;
+}

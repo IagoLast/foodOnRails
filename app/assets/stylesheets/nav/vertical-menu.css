@@ -5,7 +5,6 @@
 		height: 100%;
 		left: 0;
 		border-radius: 0px;
-		overflow: y;
 	}
 
 	.navbar-fixed-left .navbar-header {
@@ -23,9 +22,13 @@
 		width: auto;
 	}
 
-	.container {
+	.container, main {
 		width: auto;
+		padding-left: 0;
+    	padding-right: 0;
 	}
+    
+
 
 	.navbar-fixed-left .container-fluid {
 		margin: 0;
@@ -51,6 +54,11 @@
 
 	.vertical-menu-wrapper {
 		margin-left:250px;
+	}
+
+	main[role=main]{
+		margin-top: 0;
+		margin-left: 0;
 	}
 
 }
