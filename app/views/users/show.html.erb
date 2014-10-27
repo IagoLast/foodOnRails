@@ -5,3 +5,19 @@ Avatar: <td><%= image_tag(@user.avatar.url(:thumb)) %></td>
 <% if @user == current_user %>
 	<p>Email: <%= @user.email if @user.email %></p>
 <%end%>
+
+<h3>Your Recipes</h3>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class="col-md-3">
+      <img src="../images/original/missing.png" class="img-thumbnail">
+      <h4> <%= recipe.name %> </h4>
+      <p class="text-justify" > <%= recipe.short_desc %></p> 
+      <%= link_to 'Show', recipe %>
+      <%= link_to 'Edit', edit_recipe_path(recipe) %>
+      <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
+<%= link_to 'New Recipe', new_recipe_path %>
+</div>

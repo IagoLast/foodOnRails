@@ -1,61 +1,19 @@
 <h1>Listing recipes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Category</th>
-      <th>Cuisine</th>
-      <th>Dish type</th>
-      <th>Gluten free</th>
-      <th>Vegetarian</th>
-      <th>High prot</th>
-      <th>Vegan</th>
-      <th>Price</th>
-      <th>Difficult</th>
-      <th>Time</th>
-      <th>Name</th>
-      <th>Short desc</th>
-      <th>Desc</th>
-      <th>Ingredients</th>
-      <th>Images</th>
-      <th>Likes</th>
-      <th>Author</th>
-      <th>Date pub</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.user %></td>
-        <td><%= recipe.category %></td>
-        <td><%= recipe.cuisine %></td>
-        <td><%= recipe.dish_type %></td>
-        <td><%= recipe.gluten_free %></td>
-        <td><%= recipe.vegetarian %></td>
-        <td><%= recipe.high_prot %></td>
-        <td><%= recipe.vegan %></td>
-        <td><%= recipe.price %></td>
-        <td><%= recipe.difficult %></td>
-        <td><%= recipe.time %></td>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.short_desc %></td>
-        <td><%= recipe.desc %></td>
-        <td><%= recipe.ingredients %></td>
-        <td><%= recipe.images %></td>
-        <td><%= recipe.likes %></td>
-        <td><%= recipe.author %></td>
-        <td><%= recipe.date_pub %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<div class="container">
+<h2>Welcome</h2>
+<h3>Top of today</h3>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class="col-md-3">
+      <img src="images/original/missing.png" class="img-thumbnail">
+      <h4> <%= recipe.name %> </h4>
+      <p class="text-justify" > <%= recipe.short_desc %></p> 
+      <%= link_to 'Show', recipe %>
+      <%= link_to 'Edit', edit_recipe_path(recipe) %>
+      <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
 <%= link_to 'New Recipe', new_recipe_path %>
+</div>
+

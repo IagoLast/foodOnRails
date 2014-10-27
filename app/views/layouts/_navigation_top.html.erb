@@ -8,8 +8,7 @@
   	<li><%= link_to ('<i class="fa fa-home fa-lg "></i>').html_safe, root_path, title: 'Edit Account' %></li>
   	<li><%= link_to ('<i class="fa fa-cog fa-lg "></i>').html_safe, edit_user_registration_path, title: 'Edit Account' %></li>
   	<li><%= link_to ('<i class="fa fa-sign-out fa-lg"></i>').html_safe, destroy_user_session_path, method:'delete', title:"Log out" %></li>
-  	<li><%= link_to ('<i class="fa fa-plus fa-lg"></i>').html_safe,"#",  title:"New" %></li>
-  	<ul>
+  	<li><%= link_to ('<i class="fa fa-plus fa-lg"></i>').html_safe, new_recipe_path,  title:"New" %></li>
   </div>
 <% else %>
 

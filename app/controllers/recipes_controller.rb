@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-   respond_to :html, :xml, :json
+  respond_to :html, :xml, :json
 
   def index
     @recipes = Recipe.all
@@ -44,6 +44,6 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:category, :cuisine, :dish_type, :gluten_free, :vegetarian, :high_prot, :vegan, :price, :difficult, :time, :name, :short_desc, :desc, :ingredients, :images, :author)
+      params.require(:recipe).permit(:category, :cuisine, :dish_type, :gluten_free, :vegetarian, :high_prot, :vegan, :price, :difficult, :time, :name, :short_desc, :desc, :ingredients, :images)
     end
 end
