@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @recipe.user %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @recipe.category %>
+</p>
+
+<p>
+  <strong>Cuisine:</strong>
+  <%= @recipe.cuisine %>
+</p>
+
+<p>
+  <strong>Dish type:</strong>
+  <%= @recipe.dish_type %>
+</p>
+
+<p>
+  <strong>Gluten free:</strong>
+  <%= @recipe.gluten_free %>
+</p>
+
+<p>
+  <strong>Vegetarian:</strong>
+  <%= @recipe.vegetarian %>
+</p>
+
+<p>
+  <strong>High prot:</strong>
+  <%= @recipe.high_prot %>
+</p>
+
+<p>
+  <strong>Vegan:</strong>
+  <%= @recipe.vegan %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @recipe.price %>
+</p>
+
+<p>
+  <strong>Difficult:</strong>
+  <%= @recipe.difficult %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @recipe.time %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>Short desc:</strong>
+  <%= @recipe.short_desc %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @recipe.desc %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @recipe.ingredients %>
+</p>
+
+<p>
+  <strong>Images:</strong>
+  <%= @recipe.images %>
+</p>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @recipe.likes %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @recipe.author %>
+</p>
+
+<p>
+  <strong>Date pub:</strong>
+  <%= @recipe.date_pub %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

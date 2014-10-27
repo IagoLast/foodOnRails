@@ -1,0 +1,1 @@
+json.extract! @recipe, :id, :user_id, :category, :cuisine, :dish_type, :gluten_free, :vegetarian, :high_prot, :vegan, :price, :difficult, :time, :name, :short_desc, :desc, :ingredients, :images, :likes, :author, :date_pub, :created_at, :updated_at

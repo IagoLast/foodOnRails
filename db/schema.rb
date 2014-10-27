@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020195022) do
+ActiveRecord::Schema.define(version: 20141027122824) do
+
+  create_table "recipes", force: true do |t|
+    t.integer  "user_id"
+    t.string   "category"
+    t.string   "cuisine"
+    t.string   "dish_type"
+    t.boolean  "gluten_free"
+    t.boolean  "vegetarian"
+    t.boolean  "high_prot"
+    t.boolean  "vegan"
+    t.decimal  "price"
+    t.decimal  "difficult"
+    t.decimal  "time"
+    t.string   "name"
+    t.string   "short_desc"
+    t.text     "desc"
+    t.text     "ingredients"
+    t.text     "images"
+    t.decimal  "likes"
+    t.string   "author"
+    t.datetime "date_pub"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
