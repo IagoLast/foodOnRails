@@ -2,9 +2,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
  
-  # Username is unique
+  # Username is unique and mandatory
   validates_uniqueness_of :name
-
   validates :name, :presence => true
 
   # Avatar

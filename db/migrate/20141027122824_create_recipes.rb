@@ -16,7 +16,6 @@ class CreateRecipes < ActiveRecord::Migration
       t.string :short_desc
       t.text :desc
       t.text :ingredients
-      t.text :images
       t.decimal :likes
       t.string :author
       t.datetime :date_pub

@@ -2,16 +2,6 @@
 <div class="container">
 <h2>Welcome</h2>
 <h3>Top of today</h3>
-<div class="row">
-	<% @recipes.each do |recipe| %>
-		<div class="col-md-3">
-			<img src="images/original/missing.png" class="img-thumbnail">
-			<h4> <%= recipe.name %> </h4>
-			<p class="text-justify" > <%= recipe.short_desc %></p> 
-			<%= link_to 'More', recipe %>
-		</div>
-	<% end %>
-</div><!--row --> 
-
+<%= render 'recipes/list' %>
 </div>
 

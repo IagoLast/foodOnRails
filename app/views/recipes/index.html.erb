@@ -2,18 +2,6 @@
 <div class="container">
 <h2>Welcome</h2>
 <h3>Top of today</h3>
-<div class="row">
-  <% @recipes.each do |recipe| %>
-    <div class="col-md-3">
-      <img src="images/original/missing.png" class="img-thumbnail">
-      <h4> <%= recipe.name %> </h4>
-      <p class="text-justify" > <%= recipe.short_desc %></p> 
-      <%= link_to 'Show', recipe %>
-      <%= link_to 'Edit', edit_recipe_path(recipe) %>
-      <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
-</div>
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= render 'recipes/list' %>
 </div>
 

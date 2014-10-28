@@ -73,14 +73,21 @@
     <%= f.check_box :vegan %>
     <%= f.label :vegan %>
   </label>
-  
+
   <div class="form-group">
-    <%= f.label :images %>
-    <%= f.text_area :images , class:"form-control"%>
+    <%= f.label :avatar, class: 'form-control-label'  %>
+    <canvas role="avatar-preview" width="300" height="300" id="canvas" > </canvas>
+    <%= f.file_field :avatar, id: "input" %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
 </div>
 <% end %>
+<script type="text/javascript">
+  Utils.preview(
+    document.getElementById('input'), 
+    document.getElementById('canvas'),
+    "<%= @recipe.avatar.url(:medium) %> ");
+</script>

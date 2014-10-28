@@ -1,3 +1,32 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.recipe-thumb {
+	margin:auto;
+	border: 1px solid #ccc;
+	min-height: 400px;
+	max-width: 350px;
+	background-color:white;
+	padding:0;
+}
+
+.recipe-thumb img {
+	margin:auto;
+	display:block;
+	width:100%;
+}
+
+.recipe-thumb p {
+	padding: 0 10px 0 10px; 
+}
+
+
+
+h5 {
+	top: -10px; 
+	width: 100%; 
+	color: white; 
+	background: rgb(0, 0, 0); /* fallback color */
+	background: rgba(0, 0, 0, 0.92);
+	padding: 15px 10px 15px 10px; 
+	position:relative;
+}
