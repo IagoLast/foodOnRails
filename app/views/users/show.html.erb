@@ -6,7 +6,6 @@ Avatar: <td><%= image_tag(@user.avatar.url(:thumb)) %></td>
 	<p>Email: <%= @user.email if @user.email %></p>
 <%end%>
 
-<h3>Your Recipes</h3>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<h3>Recipes</h3>
+<%= render 'recipes/list' %>
 </div>

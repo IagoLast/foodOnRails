@@ -1,22 +1,43 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
+
 .recipe-thumb {
 	margin:auto;
 	border: 1px solid #ccc;
-	min-height: 400px;
+	min-height: 450px;
 	max-width: 350px;
 	background-color:white;
 	padding:0;
 }
 
-.recipe-thumb img {
+.recipe-thumb .recipe-avatar {
 	margin:auto;
 	display:block;
 	width:100%;
 }
 
-.recipe-thumb p {
-	padding: 0 10px 0 10px; 
+
+.recipe-thumb .info {
+	padding: 0px 10px 15px 10px; 
+}
+
+.recipe-thumb .info p {
+	height: 63px;
+}
+
+.recipe-thumb .info .features {
+	height: 40px;
+}
+
+.recipe-thumb .info .icon-feature {
+	width: 38px;
+	display:inline;
+	-webkit-transition: width 0.3s ;
+    transition: width 0.3s;
+}
+
+.recipe-thumb .info .icon-feature:hover {
+	width: 50px;
 }
 
 

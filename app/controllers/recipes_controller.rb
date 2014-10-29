@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   respond_to :html, :xml, :json
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   def index
     @recipes = Recipe.all
@@ -17,6 +18,10 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    if not current_user.id == @recipe.user_id
+      redirect_to root_path, :flash => { :alert => "No tienes permiso para eso" }
+    end
+
   end
 
   def create
@@ -29,8 +34,12 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe.update(recipe_params)
-    respond_with(@recipe)
+    if current_user.id == @recipe.user_id
+      @recipe.update(recipe_params)
+      respond_with(@recipe)
+    else
+      redirect_to root_path, :flash => { :alert => "No tienes permiso para eso" }
+    end
   end
 
   def destroy
