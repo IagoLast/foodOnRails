@@ -1,3 +1,8 @@
+.navbar-inverse {
+	background-color:black;
+	background-color: rgba(0, 0, 0, 0.92);
+}
+
 nav h3, nav a {
 	color: #BBB;
 }

@@ -77,7 +77,7 @@
   <div class="form-group">
     <%= f.label :avatar, class: 'form-control-label'  %>
     <canvas role="avatar-preview" width="300" height="300" id="canvas" > </canvas>
-    <%= f.file_field :avatar, id: "input" %>
+    <%= f.file_field :avatar, id: "recipe_avatar" %>
   </div>
 
   <div class="actions">
@@ -87,7 +87,7 @@
 <% end %>
 <script type="text/javascript">
   Utils.preview(
-    document.getElementById('input'), 
+    document.getElementById('recipe_avatar'), 
     document.getElementById('canvas'),
     "<%= @recipe.avatar.url(:medium) %> ");
 </script>

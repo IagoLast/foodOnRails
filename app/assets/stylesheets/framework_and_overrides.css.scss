@@ -35,9 +35,7 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
-  padding-bottom: 80px;
-  width: 100%;
+  background-color: #fff;
   }
 section {
   @extend .row;
@@ -78,4 +76,13 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+
+.navbar {
+  margin-bottom:0;
+}
+
+.vertical-menu-wrapper {
+  padding:0;
 }
