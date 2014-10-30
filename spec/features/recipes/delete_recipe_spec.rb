@@ -5,21 +5,40 @@ feature 'Delete recipe'  do
 
 # Scenario: User cannot delete a recipe if not is the owner
 #   Given I do not exist as a user
-#   When I try to delete a existing recipe
-#   Then I see "You need to sign in or sign up before continuing" message.
-	scenario 'User cannot view create recipe form if not registered' do
-		visit new_recipe_path
-		expect(page).to have_content "You need to sign in or sign up before continuing."
+#   When I try to view a existing recipe
+#   Then I dont see the delete recipe button..
+	scenario 'User cannot view delete recipe button if not owns the recipe' do
+		recipe = FactoryGirl.create(:recipe)
+		visit recipe_path(recipe.id)
+		expect(page).not_to have_content "Delete Recipe"
 	end
+
+# Scenario: User can view delete recipe button if autenticated
+#   Given I'm the owner of the recipe
+#   When I go to the recipe path
+#   Then I see Delete Recipe button.
+	scenario 'User can view delete recipe buttton if autenticated and is the recipe owner' do
+		user = FactoryGirl.create(:user)
+		signin(user.email, user.password)
+		recipe = FactoryGirl.create(:recipe, user_id: user.id)
+		visit recipe_path(recipe.id)
+		expect(page).to have_content "Delete Recipe"
+	end	
+
 
 # Scenario: User can delete a recipe  if autenticated
 #   Given I'm the owner of the recipe
-#   When I try to delete the recipe
-#   Then I see "recipe succesfully deleted" message.
-	scenario 'User can view create recipe form if autenticated' do
+#   When I click the delete recipe button
+#   Then I see Delete Recipe button.
+	scenario 'User can delete a recipe if autenticated as the recipe owner' do
 		user = FactoryGirl.create(:user)
 		signin(user.email, user.password)
-		visit new_recipe_path
-		expect(page).to have_content "New recipe"
+		recipe = FactoryGirl.create(:recipe, user_id: user.id)
+		visit recipe_path(recipe.id)
+		click_link "Delete Recipe"
+		expect(page).to have_content "Receta borrada con exito"
+
+		visit recipe_path(recipe.id)
+		expect(page.status_code).to eq(404)
 	end	
 end

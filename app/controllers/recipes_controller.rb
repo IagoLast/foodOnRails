@@ -43,6 +43,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
+      flash[:notice] = "Receta borrada con exito"
     respond_with(@recipe)
   end
 
@@ -54,10 +55,15 @@ class RecipesController < ApplicationController
     end
 
     def set_recipe
-      @recipe = Recipe.find(params[:id])
+      @recipe = Recipe.find_by id: params[:id]
+      @recipe or not_found
     end
 
     def recipe_params
       params.require(:recipe).permit(:category, :cuisine, :dish_type, :gluten_free, :vegetarian, :high_prot, :vegan, :price, :difficult, :time, :name, :short_desc, :desc, :ingredients, :avatar)
+    end
+
+    def not_found
+      render :file => "#{Rails.root}/public/404.html",  :status => 404
     end
 end

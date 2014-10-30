@@ -17,7 +17,7 @@ FactoryGirl.define do
     short_desc "MyString"
     desc "MyText"
     ingredients "MyText"
-    images "MyText"
+    avatar File.new(Rails.root + 'spec/fixtures/files/salad.jpg')
     likes "9.99"
     author "MyString"
     date_pub "2014-10-27 13:28:24"
