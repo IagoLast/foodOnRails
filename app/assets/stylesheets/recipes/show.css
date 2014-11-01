@@ -1,0 +1,16 @@
+.recipe-container {
+	background-color: #eeeeee;
+}
+
+.recipe-container .recipe-avatar {
+	vertical-align: top;
+	padding: 0;
+	max-width: 300px;
+}
+.recipe-container .info {
+	display: inline-block;
+}
+
+.recipe-container .ingredients {
+	margin-top: 15px;
+}

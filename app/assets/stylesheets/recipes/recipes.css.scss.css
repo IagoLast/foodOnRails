@@ -18,7 +18,7 @@
 
 
 .recipe-thumb .info {
-	padding: 0px 10px 15px 10px; 
+	padding: 0 10px 15px 10px; 
 }
 
 .recipe-thumb .info p {
@@ -29,18 +29,10 @@
 	height: 40px;
 }
 
-.recipe-thumb .info .icon-feature {
+.info .icon-feature {
 	width: 38px;
 	display:inline;
-	-webkit-transition: width 0.3s ;
-    transition: width 0.3s;
 }
-
-.recipe-thumb .info .icon-feature:hover {
-	width: 50px;
-}
-
-
 
 h5 {
 	top: -10px; 
