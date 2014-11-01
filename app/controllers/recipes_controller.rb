@@ -37,8 +37,12 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe.update(recipe_params)
-    respond_with(@recipe)
+    if not @recipe.update(recipe_params)
+      respond_with(@recipe)
+    else
+      flash[:notice] = "Receta actualizada con exito"
+      redirect_to root_path
+    end
   end
 
   def destroy
