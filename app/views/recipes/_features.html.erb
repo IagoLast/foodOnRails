@@ -1,0 +1,84 @@
+<div class="features">
+      <h4>Características</h4>
+      <%if recipe.high_prot? %>
+        <%= image_tag('/images/recipes/icons/hp.png', 
+          class: "icon-feature",
+          title:"Alto contenido en proteinas")
+        %>
+      <%end%>  
+      <%if recipe.vegetarian? %>
+        <%= image_tag('/images/recipes/icons/vegetarian.png',
+          class: "icon-feature",
+        title:"Apto para vegetarianos") 
+        %>
+      <%end%>  
+      <%if recipe.gluten_free? %>
+        <%= image_tag('/images/recipes/icons/gluten-free.png',
+          class: "icon-feature",
+        title:"Libre de gluten")
+        %>
+      <%end%>  
+      <%if recipe.vegan? %>
+        <%= image_tag('/images/recipes/icons/vegan.png',
+          class: "icon-feature",
+        title:"Apto para veganos") 
+        %>
+      <%end%> 
+
+      <% case recipe.price 
+         when "Cheap"%>
+          <%=image_tag('/images/recipes/icons/price_cheap-128.png', 
+            class: "icon-feature",
+           title:"Barato")
+          %>
+        <% when "Average" %>
+          <%=image_tag('/images/recipes/icons/price_average-128.png',
+            class: "icon-feature",
+           title:"Precio normal")
+          %>
+        <% when "Expensive" %>
+          <%=image_tag('/images/recipes/icons/price_expensive-128.png',
+            class: "icon-feature",
+           title:"Caro")
+          %>
+      <% end %>
+
+      <% case recipe.cuisine 
+           when "American"%><%=imge_tag('/images/recipes/icons/United_States-128.png', class: "icon-feature",
+          title:"Receta típica americana")
+            %>
+        <% when "Chinese" %><%=image_tag('/images/recipes/icons/China-128.png',
+          class: "icon-feature",
+         title:"Plato típico chino")
+          %>
+        <% when "French" %><%=image_tag('/images/recipes/icons/France-128.png',
+          class: "icon-feature",
+         title:"Plato típico francés")
+          %>
+        <% when "Indian" %><%=image_tag('/images/recipes/icons/India-128.png',
+          class: "icon-feature",
+         title:"Plato típico indio")
+          %>
+        <% when "Italian" %><%=image_tag('/images/recipes/icons/Italy-128.png',
+          class: "icon-feature",
+         title:"Plato típico italiano")
+        %>
+        <% when "Japanese" %><%=image_tag('/images/recipes/icons/Japan-128.png',
+          class: "icon-feature",
+         title:"Plato típico japones")
+          %>
+        <% when "Mexican" %><%=image_tag('/images/recipes/icons/Mexico-128.png',
+          class: "icon-feature",
+         title:"Plato típico mexicano")
+          %>
+        <% when "Other" %><%=image_tag('/images/recipes/icons/Other-128.png',
+          class: "icon-feature",
+         title:"Este plano no pertenece a ninguna cultura gastronómica concreta.")
+          %>
+        <% when "Spanish" %><%=image_tag('/images/recipes/icons/Spain-128.png',
+          class: "icon-feature",
+         title:"Plato típico Español")
+          %>
+      <% end %>
+
+</div>

@@ -3,71 +3,27 @@
   <div class="info col-md-6">
     <h3> <%= @recipe.name %> </h3>
     <p> <%= @recipe.short_desc %></p>
-    <div class="features">
-      <%if @recipe.high_prot? %>
-        <%= image_tag('/images/recipes/icons/hp.png', class: "icon-feature") %>
-      <%end%>  
-      <%if @recipe.vegetarian? %>
-        <%= image_tag('/images/recipes/icons/vegetarian.png', class: "icon-feature") %>
-      <%end%>  
-      <%if @recipe.gluten_free? %>
-        <%= image_tag('/images/recipes/icons/gluten-free.png', class: "icon-feature") %>
-      <%end%>  
-      <%if @recipe.vegan? %>
-        <%= image_tag('/images/recipes/icons/vegan.png', class: "icon-feature") %>
-      <%end%> 
+    <%= render partial: "features", locals: {recipe: @recipe} %>
+  </div>
 
-      <h4>Ingredientes</h4>
-      <p class="ingredients text-justify"> 
 
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
+  <div class="col-md-12">
+    <h4>Ingredientes</h4>
+      <pre class="text-justify"> 
         <%= @recipe.ingredients %> 
-      </p>
+      </pre>
+  </div>  
 
-    </div>
-</div>
+  <div class="col-md-12">
+    <h4>Descripcion</h4>
+    <p class="text-justify"> 
+      <%= @recipe.desc %> 
+    </p>
 
-<div class="col-md-12">
-  <h4>Descripcion</h4>
-  <p class="ingredients text-justify"> 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    <%= @recipe.desc %> 
-  </p>
-
-<%= link_to 'Back', recipes_path %> |
-<% if user_signed_in? and current_user.id == @recipe.user_id %>
-  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-  <%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%end%>  
+  <%= link_to 'Back', recipes_path %> |
+  <% if user_signed_in? and current_user.id == @recipe.user_id %>
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+    <%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%end%>  
+  </div>
 </div>

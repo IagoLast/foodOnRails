@@ -9,9 +9,9 @@ class CreateRecipes < ActiveRecord::Migration
       t.boolean :vegetarian
       t.boolean :high_prot
       t.boolean :vegan
-      t.decimal :price
-      t.decimal :difficult
-      t.decimal :time
+      t.string :price
+      t.string :difficult
+      t.string :time
       t.string :name
       t.string :short_desc
       t.text :desc
